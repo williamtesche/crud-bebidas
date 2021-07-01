@@ -10,21 +10,26 @@
 </head>
 
 <body>
-    <div>
-        <h1>Cadastro de Bebidas</h1>
+
+    <div id="container">
+        <header>
+            <img src="img/logo.svg" alt="Logo Drink List">
+        </header>
+        <main>
+            <ul>
+                <li>Cerveja Pilsen</li>
+                <li>Cerveja Weiss</li>
+                <li>Cerveja IPA</li>
+            </ul>
+        </main>
+        <footer>
+            <input name='nome' placeholder="nova bebida">
+            <button onclick="salvar()">Salvar</button>
+        </footer>
     </div>
-    <main>
-        <ul>
-            <li>Cerveja Pilsen</li>
-            <li>Cerveja Weiss</li>
-            <li>Cerveja IPA</li>
-        </ul>
 
 
-        <input name='nome'>
-        <button onclick="pegar()">Adicionar bebida</button>
-        <button onclick="apagar()">apagar bebida</button>
-    </main>
+
     <script>
 
         const input = document.querySelector("input")

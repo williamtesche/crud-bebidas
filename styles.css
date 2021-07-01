@@ -1,14 +1,80 @@
-div{
-    height: 100vh;
-    margin: 0%;
-    padding: 0%;
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
     background-image: url(Drinks_Bar_Bottle_468131_1920x1080.jpeg);
-    color:aquamarine;
-    text-align: center;
-    background-attachment: fixed;
+    display: grid;
+    margin: 0;
+}
+
+button,
+input {
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+}
+
+#container {
+    height: 100%;
+    /* width: 100px; */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
 
 }
 
-main{
-    height:100vh;
+header {
+    background: black;
+    height: 100px;
+    display: grid;
+    place-items: center;
+}
+
+header img {
+    height: 60px;
+}
+
+main {
+    background: rgba(255, 255, 255, .9);
+    flex: 1;
+}
+
+main ul {
+    margin-top: 30px;
+}
+
+main ul li {
+    margin-bottom: 20px;
+}
+
+footer {
+    background: #efd800;
+    height: 50px;
+    display: flex;
+    padding: 10px;
+}
+
+footer input {
+    flex: 1;
+    padding: 0 20px;
+    font-size: 20px;
+}
+footer button {
+    width: 80px;
+    background: black;
+    color: white;
 }
