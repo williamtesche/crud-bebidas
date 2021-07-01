@@ -10,36 +10,46 @@
 </head>
 
 <body>
-    <h1>Cadastro de Bebidas</h1>
+    <div>
+        <h1>Cadastro de Bebidas</h1>
+    </div>
+    <main>
+        <ul>
+            <li>Cerveja Pilsen</li>
+            <li>Cerveja Weiss</li>
+            <li>Cerveja IPA</li>
+        </ul>
 
-    <ul>
-        <li>Cerveja Pilsen</li>
-        <li>Cerveja Weiss</li>
-        <li>Cerveja IPA</li>
-    </ul>
 
-   
         <input name='nome'>
         <button onclick="pegar()">Adicionar bebida</button>
         <button onclick="apagar()">apagar bebida</button>
-   
-
+    </main>
     <script>
 
         const input = document.querySelector("input")
         const ul = document.querySelector('ul')
-        function pegar(){
+
+        function pegar() {
             const nome = input.value
             console.log(nome)
             let li = document.createElement('li')
             li.innerText = nome
             ul.appendChild(li)
             input.value = ''
+        }
 
+        function apagar() {
+            let el = document.querySelector('li');
+            el.parentNode.removeChild(el);
 
         }
-       
+
     </script>
+
+
+
+
 </body>
 
 </html>

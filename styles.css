@@ -1,3 +1,14 @@
-ul {
-    /* display: none; */
+div{
+    height: 100vh;
+    margin: 0%;
+    padding: 0%;
+    background-image: url(Drinks_Bar_Bottle_468131_1920x1080.jpeg);
+    color:aquamarine;
+    text-align: center;
+    background-attachment: fixed;
+
+}
+
+main{
+    height:100vh;
 }
