@@ -60,6 +60,10 @@ main ul {
 main ul li {
     margin-bottom: 20px;
 }
+/*#img2{
+    height:20px;
+    width: 20px;
+}*/
 
 footer {
     background: #efd800;
@@ -75,6 +79,6 @@ footer input {
 }
 footer button {
     width: 80px;
-    background: black;
-    color: white;
+    background: rgb(20, 2, 2);
+    color: rgb(255, 255, 255);
 }
