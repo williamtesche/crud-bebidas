@@ -16,117 +16,70 @@
             <img src="img/logo.svg" alt="Logo Drink List">
         </header>
         <main>
-            <ul> 
-                <div id='imagem'onclick="deletar()"></div>
+            <ul>
+                <div id='imagem' onclick="deletar()"></div>
                 <li>Cerveja Pilsen <button>X</button></li>
-                <li >Cerveja Weiss <button id="dois">X</button></li>
+                <li>Cerveja Weiss <button>X</button></li>
                 <li>Cerveja IPA <button>X</button></li>
             </ul>
         </main>
         <footer>
             <input name='nome' placeholder="nova bebida">
             <button onclick="salvar()">Salvar</button>
-        
+
         </footer>
     </div>
-    
+
 
 
     <script>
 
         const input = document.querySelector("input")
         const ul = document.querySelector('ul')
-        const img = document.querySelector('div')
-        const lif = document.querySelector('li')
-
 
         const btnsExcluir = document.querySelectorAll("li button")
-        console.log(btnsExcluir)
 
-        const primeiroBotaoExcluir = btnsExcluir[0]
-        console.log(primeiroBotaoExcluir)
+        const excluir = function (event) {
+            const botaoClicado = event.target
+            console.log(botaoClicado)
 
-        primeiroBotaoExcluir.addEventListener('click', function(e){
+            const liParaExcluir = botaoClicado.parentElement
+            console.log(liParaExcluir)
 
-            const botao = e.target
+            ul.removeChild(liParaExcluir)
+        }
 
-            console.log(botao)
-
-            const liPai = botao.parentElement
-            console.log(liPai)
-
-            ul.removeChild(liPai)
-
-        })
-        /////////////////////////////////////////
-    
-        const btnsDeletar = document.querySelectorAll("li button")
-        console.log(btnsDeletar)
-
-        const doisBotaoExcluir = btnsExcluir[1]
-        console.log(doisBotaoExcluir)
-
-        doisBotaoExcluir.addEventListener('click', function(e){
-
-            const botao = e.target
-
-            console.log(botao)
-
-            const liPai = botao.parentElement
-            console.log(liPai)
-
-            ul.removeChild(liPai)
-
-        })    
-
-        ////////////////////////////////
-        const btnsremove = document.querySelectorAll("li button")
-        console.log(btnsremove)
-
-        const Botaoremove = btnsExcluir[2]
-        console.log(Botaoremove)
-
-        Botaoremove.addEventListener('click', function(e){
-
-            const botao = e.target
-
-            console.log(botao)
-
-            const liPai = botao.parentElement
-            console.log(liPai)
-
-            ul.removeChild(liPai)
-
-        })            
+        btnsExcluir.forEach(btnExcluir => btnExcluir.addEventListener('click', excluir))
 
         function salvar() {
             const nome = input.value
             console.log(nome)
+
+            // criar o li
             let li = document.createElement('li')
+
+            // coloca o nome da nova bebida dentro do li
             li.innerText = nome
+
+            // criar o botao
+            const btn = document.createElement('button')
+
+            // coloca um texto dentro do botao
+            btn.innerText = "X"
+
+            // adiciona evento de exclusão do botão
+            btn.addEventListener('click', excluir)
+
+            // coloca o btn de excluir dentro do li
+            li.appendChild(btn)
+
+            // coloca li dentro da lista de bebidas
             ul.appendChild(li)
+
+            // limpa o valor do campo nova bebida
             input.value = ''
         }
-
-        function deletar() {
-            let el = document.querySelector('li');
-            el.parentNode.removeChild(el);
-            
-        }
-
-       function apagar(botao) {
-            console.log(botao)
-
-            const liPai = botao.parentElement
-            console.log(liPai)
-
-            ul.removeChild(liPai)
-
-        }
-
     </script>
-
-
 
 
 </body>
