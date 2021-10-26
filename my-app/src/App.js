@@ -14,19 +14,36 @@ function App() {
 
 
   return ( 
+    <>
     <div className="App">
-        <h1>Bem vindo ao meu site</h1>
+      <div className="inner-app">
+      <h1>Bem vindo ao meu site</h1>
 
-        <input value={novoitem} onChange={value => setNovoItem(value.target.value)} type="text" placeholder="Nome"/>
-        <br />
-        <input value={segundoitem} onChange={value => setSegundoItem(value.target.value)} type="text" placeholder="Idade"/>
-       <br />
-        <button onClick={() => adicionarNovoItem()}> adicionar</button>
+<input value={novoitem} onChange={value => setNovoItem(value.target.value)} type="text" placeholder="Nome"/>
+<br />
+<input value={segundoitem} onChange={value => setSegundoItem(value.target.value)} type="text" placeholder="Idade"/>
+<br />
+<button onClick={() => adicionarNovoItem()}> adicionar</button>
 
-        {lista.map(item => <div>{item}</div>)}
+
+
+
+      </div>
+
 
      
     </div>
+
+    <div className="li">
+    <h1>Nomes</h1>
+    
+      <div>willian</div>
+  
+  
+
+    {lista.map(item => <li>{item}</li>)}
+    </div>
+    </>
   );
 
   function adicionarNovoItem() {
