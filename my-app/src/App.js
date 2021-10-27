@@ -1,62 +1,76 @@
-import './App.css';
-import React from 'react';
-import {useState} from 'react'; 
+import "./App.css";
+import React from "react";
+import { useState } from "react";
+
+
+const obj = {
+  name: '',
+  idade: ''
+}
+
+
+
 
 function App() {
+const [lista, setLista] = useState([]);
+const [novoitem, setNovoItem] = useState(obj);
 
-  let [lista,setLista] = useState([]);
-  let [novoitem,setNovoItem] = useState("");
+const [pessoa, setPessoa ] = useState(obj)
 
+function handleChange(event ) {
+  const {name,value} = event.target;
+  setPessoa((pessoa) => {
+    return {
+      ...pessoa,[name]:value,
+    };
+  });
+  
+}
 
-  let [listar,setListar] = useState([]);
-  let [segundoitem,setSegundoItem] = useState("");
-
-
-
-  return ( 
+  
+  
+    return (
     <>
-    <div className="App">
-      <div className="inner-app">
-      <h1>Bem vindo ao meu site</h1>
+      <div className="App">
+        <div className="inner-app">
+          <h1>Enter name and age</h1>
 
-<input value={novoitem} onChange={value => setNovoItem(value.target.value)} type="text" placeholder="Nome"/>
-<br />
-<input value={segundoitem} onChange={value => setSegundoItem(value.target.value)} type="text" placeholder="Idade"/>
-<br />
-<button onClick={() => adicionarNovoItem()}> adicionar</button>
+          <input
+            name="nome"
+            value={pessoa.name}
+            onChange={handleChange}
+            type="text"
+            placeholder="name"
+          />
+          <br />
+          <input
+            idade="idade"
+            onChange={handleChange}
+            type="text"
+            placeholder="age"
+          />
+          <br />
 
-
-
-
+          <button onClick={() => adicionarNovoItem()}> adicionar</button>
+        </div>
       </div>
+      <div className="li">
+        <h1>Names </h1>
 
+        <div>willian</div>
 
-     
-    </div>
-
-    <div className="li">
-    <h1>Nomes</h1>
-    
-      <div>willian</div>
-  
-  
-
-    {lista.map(item => <li>{item}</li>)}
-    </div>
+        {lista.map((item) => (
+          <li>`${item.name}:${item.idade}`</li>
+        ))}
+      </div>
     </>
   );
 
   function adicionarNovoItem() {
-    setLista([...lista, novoitem])
+    setLista([...lista, novoitem]);
   }
-
-  function adicionarSegundoItem() {
-    setListar([...listar, segundoitem])
-  }
-
-};
-
-
-
+}
 
 export default App;
+
+
