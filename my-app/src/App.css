@@ -16,59 +16,10 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to right, black, gray);}
+  background-image: linear-gradient(to right, black, gray);
+  color: aliceblue;
 
-  
-.App {
-  text-align: center;
-  margin: 1rem;
-  border-radius: 1.3rem;
-  padding: 0.5rem;
-  background: gray;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+}   
 
-}
 
-.inner-app{
-  border-radius: 1rem;
-  background: var(--color4);
-  color: rgb(0, 0, 0);
-  overflow: hidden;
-}
 
-button{
-  color: chartreuse;
-  background:black;
-  cursor: pointer;
-  font-size: 20px;
-  margin-top: 2px;
-
-}
-
-button:hover{
-  color: rgb(175, 235, 116);
-  background: rgb(68, 67, 67);
-}
-
-input{
-  border-radius: 4px;
-  margin: 2px;
-  border: none;
-  text-align: center;
-  padding: 6px;
-}
-
-.li{
-  min-height: 10vh;
-  margin-top: 40px;
-  border-radius: 1.3rem;
-  padding: 1.5rem;
-  background: gray;
-  max-width:400px;
-}
-
-h1{
-  text-align: center;
-}
