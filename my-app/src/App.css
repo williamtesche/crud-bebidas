@@ -17,6 +17,8 @@ body{
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(to right, black, gray);}
+
+  
 .App {
   text-align: center;
   margin: 1rem;
@@ -55,6 +57,7 @@ input{
   margin: 2px;
   border: none;
   text-align: center;
+  padding: 6px;
 }
 
 .li{

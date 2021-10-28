@@ -9,19 +9,16 @@ const obj = {
 }
 
 
-
-
 function App() {
 const [lista, setLista] = useState([]);
-const [novoitem, setNovoItem] = useState(obj);
-
 const [pessoa, setPessoa ] = useState(obj)
+
 
 function handleChange(event ) {
   const {name,value} = event.target;
   setPessoa((pessoa) => {
     return {
-      ...pessoa,[name]:value,
+      ...pessoa,[name]:value
     };
   });
   
@@ -51,11 +48,11 @@ function handleChange(event ) {
           />
           <br />
 
-          <button onClick={() => adicionarNovoItem()}> adicionar</button>
+          <button onClick={() => handleChange()}> adicionar</button>
         </div>
       </div>
       <div className="li">
-        <h1>Names </h1>
+        <h1>Names</h1>
 
         <div>willian</div>
 
@@ -66,9 +63,6 @@ function handleChange(event ) {
     </>
   );
 
-  function adicionarNovoItem() {
-    setLista([...lista, novoitem]);
-  }
 }
 
 export default App;
